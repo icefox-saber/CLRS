@@ -1,0 +1,112 @@
+site_name: CLRS Solutions
+site_description: Solutions to Introduction to Algorithms Third Edition. CLRS Solutions. The textbook that a Computer Science (CS) student must read.
+site_author: Y.-J. Chen
+# site_url: https://CYJ1222.github.io/CLRS/
+
+repo_name: CYJ1222/CLRS
+repo_url: https://github.com/CYJ1222/CLRS
+
+theme:
+  name: material
+  custom_dir: custom
+  language: en
+  favicon: assets/favicon.jpeg
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: fontawesome/solid/earth-americas
+    repo: fontawesome/brands/github
+  features:
+    - content.code.copy
+    - navigation.footer
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+# Customization
+copyright: Copyright (c) 2024 icefox
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/CYJ1222
+  analytics:
+    provider: google
+    property: G-NE8FKX91SB
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - css/custom.css
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - md_in_html
+
+nav:
+  - Preface: index.md
+  - I Foundations:
+      - 1 The Role of Algorithms in Computing:
+          - Chap01/1.1.md
+          - Chap01/1.2.md
+          - Chap 1 Problems:
+              - Chap01/Problems/1-1.md
+      - 2 Getting Started:
+          - Chap02/2.1.md
+          - Chap02/2.2.md
+          - Chap02/2.3.md
+          - Chap 2 Problems:
+              - Chap02/Problems/2-1.md
+              - Chap02/Problems/2-2.md
+              - Chap02/Problems/2-3.md
+              - Chap02/Problems/2-4.md
+      - 3 Characterizing Running Times:
+          - Chap03/3.1.md
+          - Chap03/3.2.md
+          - Chap03/3.3.md
+          - Chap 3 Problems:
+              - Chap03/Problems/3-1.md
+              - Chap03/Problems/3-2.md
+              - Chap03/Problems/3-3.md
+              - Chap03/Problems/3-4.md
+              - Chap03/Problems/3-5.md
+              - Chap03/Problems/3-6.md
+              - Chap03/Problems/3-7.md
+      - 4 Divide-and-Conquer:
+          - Chap04/4.1.md
+          - Chap04/4.2.md
+          - Chap04/4.3.md
+          - Chap04/4.4.md
+          - Chap04/4.5.md
+          - Chap04/4.6.md
+          - Chap04/4.7.md
+          - Chap 4 Problems:
+              - Chap04/Problems/4-1.md
+              - Chap04/Problems/4-2.md
+              - Chap04/Problems/4-3.md
+              - Chap04/Problems/4-4.md
+              - Chap04/Problems/4-5.md
+              - Chap04/Problems/4-6.md
+              - Chap04/Problems/4-7.md
