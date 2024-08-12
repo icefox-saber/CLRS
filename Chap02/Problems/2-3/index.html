@@ -1555,11 +1555,11 @@ The procedure </strong>HORNER<strong> implements </strong>Horner**’s rule to &
 <p><strong>a</strong>. In terms of $\Theta$-notation, what is the tunning time of this procedure?</p>
 <p><strong>b</strong>. Write pseudocode to implement the naive polynomial-evaluation algorithm that computes each term of the polynomial from scratch. What is the running time of this algorithm? How does it compare with <strong>HORNER</strong>?</p>
 <p><strong>c</strong>. Consider the following loop invariant for the procedure <strong>HORNER</strong>:</p>
-<p>At the start of each iteration of the <strong>for</strong> loop of lines 2-3,
-$$
-p = \sum <em>{k=0}^{n-(i+1)} A[k+i+1] \cdot x^k
-$$
-Interpret a summation with no terms at equaling 0. Following the structure of th loop-invariant proof presented in this chapter, use this loop invariant to show that, at termination, $p = \sum </em>{k=0} ^{n} A[k] \cdot x^k$</p>
+<p>At the start of each iteration of the <strong>for</strong> loop of lines 2-3,</p>
+<p>$$
+p = \sum _{k=0}^{n-(i+1)} A[k+i+1] \cdot x^k
+$$</p>
+<p>Interpret a summation with no terms at equaling 0. Following the structure of th loop-invariant proof presented in this chapter, use this loop invariant to show that, at termination, $p = \sum _{k=0} ^{n} A[k] \cdot x^k$</p>
 </blockquote>
 <h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
 <p>$\Theta(n)$</p>

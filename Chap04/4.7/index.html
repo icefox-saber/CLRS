@@ -1595,18 +1595,51 @@
 $$</p>
 <p>where $c &gt; 0$ is constant. Prove that whatever the implicit initial conditions for T(n) might be, there exist initial conditions for $T'(n)$ such that $T'(n) = cT(n)$ for all $n&gt;0$. Conclude that we can drop the asymptotics on a driving function in any Akra-Bazzi recurrence without affecting its asymptotic solution.</p>
 </blockquote>
+<p>assume $T'(n)=cT(n)$</p>
+<p>$$
+\begin{aligned}
+    T'(n) &amp; =cf(n)+\sum_{i=1}^k a_iT'(n/b_i)\cr
+    &amp; =cf(n)+\sum_{i=1}^k a_icT(n/b_i)\cr
+    &amp; =c(f(n)+\sum_{i=1}^k a_iT(n/b_i))\cr
+    &amp; =cT(n)\cr
+\end{aligned}
+$$</p>
+<p>$T'(n)=T(n)$ holds only if the base case(initial conditions) that $T'(n)=T(n)$ for all $n&lt;n_{}0$ is true</p>
 <h2 id="47-2">4.7-2<a class="headerlink" href="#47-2" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Show that $f(n)=n^2$ satisfies the polynomial-growth condition but that $f(n)=2^n$ does not.</p>
 </blockquote>
+<p>$$
+\begin{aligned}
+    &amp; \forall \phi \forall \psi:1 \leq \psi \leq \phi\cr
+    &amp; n^2/d\leq (\psi n)^2\leq dn^2\cr
+    \iff &amp; \max(1/\psi^{2})\leq d \wedge \max(\psi^{2}) \leq d\cr
+    \iff &amp; \phi^{2}\leq d\qquad(1)\cr
+    &amp; 2^n/d\leq 2^{\psi n}\leq d2^n\cr
+    \iff &amp; 2^{n-\psi n}\leq d\wedge 2^{\psi n-n}\leq d\qquad (2)\cr
+\end{aligned}
+$$</p>
+<p>$d=\phi^{2}$ satisfies $(1)$, since $2^{(\psi-1)n}\to\infty$ therefore no constant $d$ satisfies $(2)$</p>
 <h2 id="47-3">4.7-3<a class="headerlink" href="#47-3" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Let f(n) be a function that satisfies the polynomial-growth condition. Prove that $f(n)$ is asymptotically positive, that is, there exists a constantis asymptotically positive, that is, there exists a constant $n_0\geq 0$ such that $f(n)\geq 0$ for all $n\geq n_0$.</p>
+<p>Let f(n) be a function that satisfies the polynomial-growth condition. Prove that $f(n)$ is asymptotically positive, that is, there exists a constant $n_0\geq 0$ such that $f(n)\geq 0$ for all $n\geq n_0$.</p>
 </blockquote>
+<p>$$
+\begin{aligned}
+    \exist \hat{n} \text{ that }\forall n &gt; \hat{n}:\cr
+    f(n)/d \leq f(\psi n) \leq df(n)\cr
+    \implies 0\leq (d^2-1) f(n)\cr
+    \because d&gt;1\cr
+    \therefore f(n)&gt;0\cr
+\end{aligned}
+$$</p>
 <h2 id="star-47-4">$\star$ 4.7-4<a class="headerlink" href="#star-47-4" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Give an example of a function $f(n)$ that does not satisfy the polynomial-growth condition but for which $f(\Theta(n)) = \Theta(f(n))$.</p>
 </blockquote>
+<ul>
+<li><strong>TODO</strong></li>
+</ul>
 <h2 id="47-5">4.7-5<a class="headerlink" href="#47-5" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Use the Akra-Bazzi method to solve the following recurrences.</p>
@@ -1616,10 +1649,102 @@ $$</p>
 <p><strong>d</strong>. $T(n) = (1/3)T(n/3) + 1/n$.</p>
 <p><strong>e</strong>. $T(n) = 3T(n/3) + 3T(2n/3)+n^2$.</p>
 </blockquote>
+<p><strong>a</strong>.</p>
+<p>$$
+\begin{aligned}
+    &amp; (\frac{1}{2})^p+(\frac{1}{3})^p+(\frac{1}{6})^p=1\cr
+    \implies &amp; p=1\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; = \Theta(n^1(1+\int_{1}^{n}\frac{x\lg x}{x^{2}}dx))\cr
+    &amp; = \Theta(n^1(1+\int_{1}^{n}\frac{\ln x}{x\ln 2}dx))\cr
+    &amp; = \Theta(n^1(1+\left[\frac{\ln^{2} x}{2\ln 2}\right]_{1}^{n}))\cr
+    &amp; = \Theta(n(1+\frac{\ln^{2} n}{2\ln 2}))\cr
+    &amp; =\Theta(n\lg^{2} n)
+\end{aligned}
+$$</p>
+<p><strong>b</strong>.</p>
+<p>$$
+\begin{aligned}
+    &amp; \frac{3}{3^p}+\frac{8}{4^p}=1\cr
+    &amp; \frac{3}{3^1}+\frac{8}{4^1}=3\cr
+    &amp; \frac{3}{3^2}+\frac{8}{4^2}=\frac{5}{6}\cr
+    \implies &amp; 1&lt;p&lt;2\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{x^2/\lg x}{x^{p+1}}dx))\cr
+    &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{1}{x^{p-1}\ln x}dx))\cr
+    &amp; = \Omega(n^p(1+\int_{1}^{n}\frac{1}{x\ln x}dx))\cr
+    &amp; = \Omega(n^p(1+\left[\ln\ln x\right]_1^{n}))\cr
+    &amp; = \Omega(n^p(1+\ln\ln n-\ln\ln 1))\cr
+    &amp; = \infty\cr
+\end{aligned}
+$$</p>
+<p><strong>c</strong>.</p>
+<p>$$
+\begin{aligned}
+    &amp; \frac{2}{3}(\frac{1}{3})^p+\frac{1}{3}(\frac{2}{3})^p=1\cr
+    \implies &amp; \frac{2+2^p}{3^{p+1}}=1\cr
+    \implies &amp; p=0\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; =\Theta(1+\int_{1}^{n}\frac{\lg x}{x}dx)\cr
+    &amp; =\Theta(\lg^{2}n)
+\end{aligned}
+$$</p>
+<p><strong>d</strong>.</p>
+<p>$$
+\begin{aligned}
+    &amp; \frac{1}{3}(\frac{1}{3})^p=1\cr
+    \implies &amp; p=-1\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; =\Theta(n^{-1}(1+\int_{1}^{n}\frac{1}{x}dx))\cr
+    &amp; =\Theta(n^{-1}(1+\left[lg n\right]_{1}^{n}))\cr
+    &amp; =\Theta(n^{-1}lg n)\cr
+\end{aligned}
+$$</p>
+<p><strong>e</strong>. $T(n) = 3T(n/3) + 3T(2n/3)+n^2$.</p>
+<p>$$
+\begin{aligned}
+    &amp; 3(\frac{1}{3})^p + 3(\frac{2}{3})^p=1\cr
+    \implies &amp; p=2\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; =\Theta(n^{2}(1+\int_{1}^{n}\frac{x^2}{x^3}dx))\cr
+    &amp; =\Theta(n^2\lg n)
+\end{aligned}
+$$</p>
 <h2 id="star-47-6">$\star$ 4.7-6<a class="headerlink" href="#star-47-6" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Use the Akra-Bazzi method to prove the continuous master theorem.</p>
 </blockquote>
+<p>$$
+\begin{aligned}
+    &amp; T(n)=aT(n/b)+f(n)\cr
+    &amp; \frac{a}{b^p}=1\cr
+    \implies &amp; p=\log_{b}a\cr
+    T(n) &amp; =\Theta(n^p(1+\int_{1}^{n}\frac{f(x)}{x^{p+1}}dx))\cr
+    &amp; =\Theta(n^{\log_{b}a}(1+\int_{1}^{n}\frac{f(x)}{x^{\log_{b}a+1}}dx))\cr
+    &amp; G(n)=\int_{1}^{n}\frac{f(x)}{x^{\log_{b}a+1}}dx\cr
+    \text{case 1:} &amp; \cr
+    &amp; f(n)=O(n^{\log_{b}a-\epsilon})(\epsilon&gt;0)\cr
+    G(n) &amp; = O(\int_{1}^{n}\frac{1}{x^{1+\epsilon}}dx)\cr
+    &amp; = O(x^{-\epsilon})\cr
+    T(n) &amp; =\Theta(n^{\log_{b}a}(1+G(n)))\cr
+    &amp; = \Theta(n^{\log_{b}a})\cr
+    \text{case 2:} &amp; \cr
+    &amp; f(n)=\Theta(n^{\log_{b}a}\lg^{k}n)(k\geq 0)\cr
+    G(n) &amp; = \Theta(\int_{1}^{n}\frac{lg^{k}n}{x^{1}}dx)\cr
+    &amp; = \Theta(\lg^{k+1}n)\cr
+    T(n) &amp; =\Theta(n^{\log_{b}a}(1+G(n)))\cr
+    &amp; = \Theta(n^{\log_{b}a}\lg^{k+1}n)\cr
+    \text{case 3:} &amp; \cr
+    T(n) &amp; =\Omega(f(n))\cr
+    &amp; f(n)=\Omega(n^{\log_{b}a+\epsilon})(\epsilon&gt;0)\cr
+    &amp;\text{if } af(n/b)&lt;cf(n)\text{ for some }c&lt;1\cr
+    G(n) &amp; = O(f(n)\int_{1}^{n}\frac{1}{x^{\log_{b}a+1}}dx)\cr
+    &amp; = O(\frac{f(n)}{x^{\log_{b}a}})\cr
+    T(n) &amp; =\Theta(n^{\log_{b}a}(1+G(n)))\cr
+    &amp; =O(f(n))\cr
+    T(n)&amp; =\Theta(f(n))
+\end{aligned}
+$$</p>
 
 
 
