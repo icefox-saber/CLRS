@@ -1261,6 +1261,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4-2 Parameter-passing costs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1270,6 +1281,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1424,6 +1481,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1448,7 +1540,7 @@
 <p>Arrays are passed by pointer. Time $= \Theta(1)$.</p>
 </li>
 <li>
-<p>Arrays are passed by copying. Time $=\Theta(1)$, where $N$ is the size of the array.</p>
+<p>Arrays are passed by copying. Time $=\Theta(N)$, where $N$ is the size of the array.</p>
 </li>
 <li>
 <p>Arrays are passed by copying only the subrange that might be accessed by the called procedure. Time $=\Theta(n)$ if the subarray contains $n$ elements.</p>
@@ -1460,6 +1552,88 @@
 <p><strong>c</strong>. The MATRIX-MULTIPLY-RECURSIVE procedure from Section 4.1.</p>
 <p>Give nine recurrences $T_{a1}(N,n),T_{a2}(N,n),\dots ,T_{c3}(T,n)$ for the worst-case running times of each of the three algorithms above when arrays and matrices are passed using each of the three parameter-passing strategies above. Solve your recurrences, giving tight asymptotic bounds.</p>
 </blockquote>
+<h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>a1</p>
+<p>$$
+\begin{aligned}
+    T_{a1}(N,n)=T(N,\frac{n}{2})+\Theta(1)\cr
+    n^{\log_{b}a}=n^{\log_{2}1}=1\cr
+    f(n)=\Theta(1)=\Theta(n^{\log_{b}a})\cr
+    T_{a1}(N,n)=\Theta(\lg n)\cr
+\end{aligned}
+$$</p>
+<p>a2</p>
+<p>$$
+\begin{aligned}
+    T_{a2}(N,n)=T(N,\frac{n}{2})+\Theta(N)\cr
+    n^{\log_{b}a}=n^{\log_{2}1}=1\cr
+    T_{a2}(N,n)=\Theta(N\lg n)\cr
+\end{aligned}
+$$</p>
+<p>a3</p>
+<p>$$
+\begin{aligned}
+    T_{a3}(N,n)=T(N,\frac{n}{2})+\Theta(n)\cr
+    n^{\log_{b}a}=n^{\log_{2}1}=1\cr
+    f(n)=\Theta(n)=\Omega(n^{1+\log_{b}a})\cr
+    af(\frac{n}{b})=f(\frac{n}{2})\leq \frac{1}{2}f(n)\cr
+    T_{a3}(N,n)=\Theta(f(n))=\Theta(n)\cr
+\end{aligned}
+$$</p>
+<h2 id="b"><strong>b</strong><a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>b1</p>
+<p>$$
+\begin{aligned}
+    T_{b1}(N,n)=2T(N,\frac{n}{2})+\Theta(n)\cr
+    n^{\log_{b}a}=n^{\log_{2}2}=n\cr
+    f(n)=\Theta(n)=\Theta(n^{\log_{b}a}\lg^{0}n)\cr
+    T_{b1}(N,n)=\Theta(n \lg n)\cr
+\end{aligned}
+$$</p>
+<p>b2</p>
+<p>$$
+\begin{aligned}
+    T_{b2}(N,n)=2T(N,\frac{n}{2})+\Theta(N+n)=2T(N,\frac{n}{2})+\Theta(N)\cr
+    n^{\log_{b}a}=n^{\log_{2}1}=n\cr
+    T_{b2}(N,n)=\Theta(n+N\lg n)=\Theta(N\lg n)\cr
+\end{aligned}
+$$</p>
+<p>b3</p>
+<p>$$
+\begin{aligned}
+    T_{b3}(N,n)=2T(N,\frac{n}{2})+\Theta(n)\cr
+    n^{\log_{b}a}=n^{\log_{2}2}=n\cr
+    f(n)=\Theta(n)=\Theta(n^{\log_{b}a}\lg^{0}n)\cr
+    T_{b3}(N,n)=\Theta(n \lg n)\cr
+\end{aligned}
+$$</p>
+<h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>c1</p>
+<p>$$
+\begin{aligned}
+    T_{c1}(N,n)=8T(N,\frac{n}{2})+\Theta(1)\cr
+    n^{\log_{b}a}=n^{\log_{2}8}=n^3\cr
+    f(n)=\Theta(1)=O(n^{\log_{b}a-3})\cr
+    T_{c1}(N,n)=\Theta(n^3)\cr
+\end{aligned}
+$$</p>
+<p>c2</p>
+<p>$$
+\begin{aligned}
+    T_{c2}(N,n)=8T(N,\frac{n}{2})+\Theta(N)\cr
+    n^{\log_{b}a}=n^{\log_{2}8}=n^3\cr
+    T_{c2}(N,n)=\Theta(n^3+N\lg N)\cr
+\end{aligned}
+$$</p>
+<p>c3</p>
+<p>$$
+\begin{aligned}
+    T_{c3}(N,n)=8T(N,\frac{n}{2})+\Theta(n)\cr
+    n^{\log_{b}a}=n^{\log_{2}8}=n^3\cr
+    f(n)=\Theta(n)=O(n^{\log_{b}a-2})\cr
+    T_{c3}(N,n)=\Theta(n^3)\cr
+\end{aligned}
+$$</p>
 
 
 

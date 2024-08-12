@@ -1282,6 +1282,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4-3 Solving recurrences with a change of variables
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1291,6 +1302,79 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      f
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1424,6 +1508,68 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    <span class="md-ellipsis">
+      f
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1443,7 +1589,7 @@
 <h1 id="4-3-solving-recurrences-with-a-change-of-variables">4-3 Solving recurrences with a change of variables<a class="headerlink" href="#4-3-solving-recurrences-with-a-change-of-variables" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>Sometimes, a little algebraic manipulation can make an unknown recurrence similar to one you have seen before. Let’s solve the recurrence</p>
-<p>$T(n)=2T(\sqrt{n})+\Theta(\lg n)$</p>
+<p>$T(n)=2T(\sqrt{n})+\Theta(\lg n)$ (4.25)</p>
 <p>by using the change-of-variables method.</p>
 <p><strong>a</strong>. Define $m=\lg n$ and $S(m)=T(2^m)$. Rewrite recurrence (4.25) in terms of m and $S(m)$.</p>
 <p><strong>b</strong>. Solve your recurrence for $S(m)$.</p>
@@ -1453,6 +1599,50 @@
 <p><strong>e</strong>. $T(n)=2T(\sqrt{n})+\Theta(1)$.</p>
 <p><strong>f</strong>. $T(n)=3T(\sqrt[3]{n})+\Theta(n)$.</p>
 </blockquote>
+<h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>$S(m)=T(2^m)=2T(\sqrt{2^m})+\Theta(m)=2T(2^{m/2})+\Theta(m)=2S(m/2)+\Theta(m)$</p>
+<h2 id="b"><strong>b</strong><a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    m^{\log_{b}a}=m\cr
+    f(m)=m=\Theta(m^{\log_{b}a})\cr
+    S(m)=\Theta(m\lg m)
+\end{aligned}
+$$</p>
+<h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>$T(n)=S(\lg n)=\Theta(\lg n\lg\lg n)$</p>
+<h2 id="d"><strong>d</strong><a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
+<p><img alt="4-3.1" src="../../../img/4-3.d.png" /></p>
+<p>depth:$\lg\lg n +1$, leaves: $2^{\lg\lg n}$</p>
+<p>The total cost over all nodes at depth $i$,for $i=0,1,\dots,\lg\lg n-1$ is $2^i\cdot \frac{1}{2^i}\Theta(\lg n)=\Theta(\lg n)$</p>
+<p>$$
+\begin{aligned}
+    T(n) &amp; =2^{\lg\lg n}\Theta(1)+\sum_{i=0}^{\lg\lg n-1}\Theta(\lg n)\cr
+    &amp; =\Theta(\lg n)+\lg\lg n\Theta(\lg n)\cr
+    &amp; = \Theta(\lg n\lg\lg n)\cr
+\end{aligned}
+$$</p>
+<h2 id="e"><strong>e</strong><a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
+<p>depth:$\lg\lg n +1$, leaves: $2^{\lg\lg n}$</p>
+<p>The total cost over all nodes at depth $i$,for $i=0,1,\dots,\lg\lg n-1$ is $2^i\cdot \Theta(1)=\Theta(2^i)$</p>
+<p>$$
+\begin{aligned}
+    T(n) &amp; =2^{\lg\lg n}\Theta(1)+\sum_{i=0}^{\lg\lg n-1}2^i\Theta(1)\cr
+    &amp; =\Theta(\lg n)+(2^{\lg\lg n}-1)\Theta(1)\cr
+    &amp; = \Theta(\lg n)\cr
+\end{aligned}
+$$</p>
+<h2 id="f"><strong>f</strong><a class="headerlink" href="#f" title="Permanent link">&para;</a></h2>
+<p>$S(m)=T(3^m)=3T(3^{m/3})+\Theta(3^m)=3S(m/3)+\Theta(3^m)$.</p>
+<p>$$
+\begin{aligned}
+    m^{\log_{b}a}=m^{\log_{3}3}=m\cr
+    f(m)=3^m=\Omega(m^{2+\log_{b}a})\cr
+    3f(m/3)=3\cdot 3^{m/3}\leq (1/3)f(m)\cr
+    S(m)=\Theta(f(m))=\Theta(3^m)\cr
+    T(n)=S(\log_{3}n)=\Theta(n)\cr
+\end{aligned}
+$$</p>
 
 
 
