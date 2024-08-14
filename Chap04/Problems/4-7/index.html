@@ -1628,14 +1628,14 @@ $$</p>
 <h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p>$$
 \begin{aligned}
-    i<k\cr
-    \text{since }A[i,f(i)]=\min(A[i,x]),A[k,f(k)]=\min(A[k,x])\cr
-    A[i,f(i)]+A[k,f(k)] \leq A[i,f(k)]+A[k,f(i)]\cr
-    \text{assume }f(i)>f(k)\cr
-    \implies A[i,f(k)]+A[k,f(i)] \leq A[i,f(i)]+A[k,f(k)]\cr
-    \implies A[i,f(k)]+A[k,f(i)] = A[i,f(i)]+A[k,f(k)]\cr
-    A[i,f(i)]\leq A[i,f(k)]\cr
-    A[k,f(k)]\leq A[k,(f(i))]\cr
+    i \lt k\cr
+    \text{since } A[i,f(i)] = \min(A[i,x]),A[k,f(k)] = \min(A[k,x])\cr
+    A[i,f(i)] + A[k,f(k)] \leq A[i,f(k)] + A[k,f(i)]\cr
+    \text{assume }f(i) \gt f(k)\cr
+    \implies A[i,f(k)] + A[k,f(i)] \leq A[i,f(i)] + A[k,f(k)]\cr
+    \implies A[i,f(k)] + A[k,f(i)] = A[i,f(i)] + A[k,f(k)]\cr
+    A[i,f(i)] \leq A[i,f(k)]\cr
+    A[k,f(k)] \leq A[k,(f(i))]\cr
     \implies A[i,f(i)] = A[i,f(k)]\cr
     \implies A[k,f(k)]= A[k,(f(i))]\cr
     \implies f(i)\leq f(k)\cr
