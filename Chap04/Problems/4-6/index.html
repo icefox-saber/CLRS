@@ -1345,6 +1345,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4-6 Chip testing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1354,6 +1365,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1424,6 +1490,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1442,13 +1552,13 @@
 
 <h1 id="4-6-chip-testing">4-6 Chip testing<a class="headerlink" href="#4-6-chip-testing" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>Professor Diogenes has n supposedly identical integrated-circuit chips that in principle are capable of testing each other. The professor’s test jig accommodates two chips at a time. When the jig is loaded, each chip tests the other and reports whether it is good or bad. A good chip always reports accurately whether the other chip is good or bad, but the professor cannot trust the answer of a bad chip. Thus, the four possible outcomes of a test are as follows:</p>
+<p>Professor Diogenes has $n$ supposedly identical integrated-circuit chips that in principle are capable of testing each other. The professor’s test jig accommodates two chips at a time. When the jig is loaded, each chip tests the other and reports whether it is good or bad. A good chip always reports accurately whether the other chip is good or bad, but the professor cannot trust the answer of a bad chip. Thus, the four possible outcomes of a test are as follows:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Chip A asys</th>
-<th style="text-align: left;">Chip B asys</th>
-<th style="text-align: left;">Chip C asys</th>
+<th style="text-align: left;">Chip A says</th>
+<th style="text-align: left;">Chip B says</th>
+<th style="text-align: left;">Conclusion</th>
 </tr>
 </thead>
 <tbody>
@@ -1474,13 +1584,51 @@
 </tr>
 </tbody>
 </table>
-<p><strong>a</strong>. Show that if at least $n=2$ chips are bad, the professor cannot necessarily determine which chips are good using any strategy based on this kind of pairwise test. Assume that the bad chips can conspire to fool the professor.</p>
-<p>Now you will design an algorithm to identify which chips are good and which are bad, assuming that more than $n=2$ of the chips are good. First, you will determine how to identify one good chip.</p>
+<p><strong>a</strong>. Show that if at least $n/2$ chips are bad, the professor cannot necessarily determine which chips are good using any strategy based on this kind of pairwise test. Assume that the bad chips can conspire to fool the professor.</p>
+<p>Now you will design an algorithm to identify which chips are good and which are bad, assuming that more than $n/2$ of the chips are good. First, you will determine how to identify one good chip.</p>
 <p><strong>b</strong>. Show that $\lfloor n/2 \rfloor$ pairwise tests are sufficient to reduce the problem to one of nearly half the size. That is, show how to use $\lfloor n/2 \rfloor$ pairwise tests to obtain a set with at most $\lceil n/2 \rceil$ chips that still has the property that more than half of the chips are good.</p>
 <p><strong>c</strong>. Show how to apply the solution to part (b) recursively to identify one good chip. Give and solve the recurrence that describes the number of tests needed to identify one good chip.</p>
 <p>You have now determined how to identify one good chip.</p>
 <p><strong>d</strong>. Show how to identify all the good chips with an additional $\Theta(n)$ pairwise tests.</p>
 </blockquote>
+<h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>If the professor want to determine which chip is good, he must get case 1 that A and B both say the other is good, and ensure there is no bad chip left. So he need to use case 2,3,4 to drop bad chips, since bad chips conspire to fool the professor, each time will drop a bad chip together a good one.</p>
+<p>If bad chips number is more than good chips, the professor cannot necessarily determine which chips are good.</p>
+<h2 id="b"><strong>b</strong><a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">findgoodCchip</span><span class="p">(</span><span class="n">chips</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">chips</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">zero</span><span class="c1">//end is good chips number equal bad chips  </span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">NIL</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">chips</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">one</span><span class="c1">//must be good chips</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="n">one</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">chips</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">odd</span><span class="c1">//good chips is more than bad chips </span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="n">A</span><span class="o">=</span><span class="n">left</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">chip</span><span class="w"> </span><span class="n">aside</span><span class="w"> </span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">A</span><span class="o">=</span><span class="n">NIL</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="n">divide</span><span class="w"> </span><span class="n">rest</span><span class="w"> </span><span class="n">chips</span><span class="w"> </span><span class="n">into</span><span class="w"> </span><span class="n">pairs</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="c1">//floor(n/2) operation</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">each</span><span class="w"> </span><span class="n">pairs</span><span class="c1">//this for loop ensure good chips number are great than or eqaul bad chips</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">report</span><span class="w"> </span><span class="n">says</span><span class="w"> </span><span class="n">at</span><span class="w"> </span><span class="n">least</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">them</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">bad</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">            </span><span class="n">drop</span><span class="w"> </span><span class="n">both</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">        </span><span class="k">else</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">            </span><span class="n">drop</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">pair</span><span class="c1">//worst-case: halve the size</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="n">flag</span><span class="o">=</span><span class="n">findgoodCchip</span><span class="p">(</span><span class="n">chips</span><span class="p">)</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NIL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">A</span><span class="o">!=</span><span class="n">NIL</span><span class="c1">//A is good chip</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">A</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">flag</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NIL</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="n">A</span><span class="o">==</span><span class="n">NIL</span><span class="c1">//no good chip from this call stack</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">flag</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">flag</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">flag</span>
+</code></pre></div>
+<h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>already apply the solution recursively in part(b),</p>
+<p>$$
+\begin{aligned}
+    T(n)=n/2+T(n/2)\cr
+    T(n)=\Theta(n)\cr
+\end{aligned}
+$$</p>
+<h2 id="d"><strong>d</strong><a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
+<p>use the good chip to test other chips$\Theta(n)$.</p>
 
 
 
@@ -1552,7 +1700,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (c) 2024 icefox
+      Copyright (c) 2024 icefox-saber
     </div>
   
   

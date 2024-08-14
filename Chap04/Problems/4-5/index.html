@@ -1324,6 +1324,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4-5 Fibonacci numbers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1333,6 +1344,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1424,6 +1499,59 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1445,8 +1573,8 @@
 <p>This problem develops properties of the Fibonacci numbers, which are defined by recurrence (3.31) on page 69. We’ll explore the technique of generating functions to solve the Fibonacci recurrence. Define the <strong>generating function</strong> (or <strong>formal power series</strong>) $\mathcal{F}$ as</p>
 <p>$$
 \begin{aligned}
-\mathcal{F} &amp; = \sum_{i=0}^{\infty}F_iz^i\cr
-&amp; = 0+z+z^2+2z^3+3z^4+5z^5+8z^6+13z^7+21z^8+\cdots,
+\mathcal{F}(z) &amp; = \sum_{i=0}^{\infty}F_iz^i\cr
+&amp; = 0+z+z^2+2z^3+3z^4+5z^5+8z^6+13z^7+21z^8+\cdots,\cr
 \end{aligned}
 $$
 where $F_i$ is the $i$th Fibonaccci nunber.</p>
@@ -1455,8 +1583,8 @@ where $F_i$ is the $i$th Fibonaccci nunber.</p>
 <p>$$
 \begin{aligned}
 \mathcal{F}(z) &amp; = \frac{z}{1-z-z^2}\cr
-&amp; = \frac{z}{(1-\phi z)(1-\hat\phi z)}
-&amp; = \frac{1}{\sqrt{5}}(\frac{1}{1-\phi z}-\frac{1}{1-\hat\phi z}),
+&amp; = \frac{z}{(1-\phi z)(1-\hat\phi z)}\cr
+&amp; = \frac{1}{\sqrt{5}}(\frac{1}{1-\phi z}-\frac{1}{1-\hat\phi z})\cr
 \end{aligned}
 $$</p>
 <p>where $\phi$ is the golden ratio, and $\hat{\phi}$ is its conjugatr(see page 69).</p>
@@ -1469,6 +1597,58 @@ $$</p>
 <p>(Hint: Observe that $|\hat\phi&lt;1|$.)</p>
 <p><strong>e</strong> Prove that $F_{i+2}\geq \phi^{i}$ for $i\geq 0$.</p>
 </blockquote>
+<h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    z+z\mathcal{F}(z)+z^2\mathcal{F}(z) &amp; =z+z\sum_{i=0}^{\infty}F_iz^i + z^{2}\sum_{i=0}^{\infty}F_iz^i\cr
+    &amp; = z+\sum_{i=1}^{\infty}F_{i-1}z^i + \sum_{i=2}^{\infty}F_{i-2}z^i\cr
+    &amp; = z+F_{0}z^1 + \sum_{i=2}^{\infty}(F_{i-2}+F_{i-1})z^i\cr
+    &amp; = z+0 + \sum_{i=2}^{\infty}F_{i}z^i\cr
+    &amp; =\sum_{i=0}^{\infty}F_{i}z^i\cr
+    &amp; =\mathcal{F}(z)\cr
+\end{aligned}
+$$</p>
+<h2 id="b"><strong>b</strong><a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    &amp;\mathcal{F}(z)=z+z\mathcal{F}(z)+z^2\mathcal{F}(z)\cr
+    \implies &amp; \mathcal{F}(z)  = \frac{z}{1-z-z^2}\cr
+    &amp; \phi\hat{\phi}=-1;\phi + \hat{\phi}=1;\phi - \hat{\phi}=\sqrt{5}\cr
+    \implies &amp; \mathcal{F}(z)  = \frac{z}{1-(\phi + \hat{\phi})z-(-\phi\hat{\phi})z^2}\cr
+    \implies &amp; \mathcal{F}(z)  = \frac{z}{(1-\phi z)(1-\hat\phi z)}\cr
+    \implies &amp; \mathcal{F}(z)  = \frac{1}{\sqrt{5}}\frac{(\phi - \hat{\phi}) z}{(1-\phi z)(1-\hat\phi z)}\cr
+    \implies &amp; \mathcal{F}(z)  = \frac{1}{\sqrt{5}}(\frac{1}{1-\phi z}-\frac{1}{1-\hat\phi z})\cr
+\end{aligned}
+$$</p>
+<h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    \sum_{i=0}^{\infty}\frac{1}{\sqrt{5}}(\phi^{i}-\hat{\phi}^i)z^i &amp; = \sum_{i=0}^{\infty}\frac{1}{\sqrt{5}}(\phi z)^i - \sum_{i=0}^{\infty}\frac{1}{\sqrt{5}}(\hat{\phi}z)^i\cr
+    &amp; = \frac{1}{\sqrt{5}}(\frac{1}{1-\phi z}-\frac{1}{1-\hat{\phi} z})\cr
+    &amp; = \mathcal{F}(z)\cr
+\end{aligned}
+$$</p>
+<h2 id="d"><strong>d</strong><a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    F_{i} &amp; =\frac{1}{\sqrt{5}}(\phi^{i}-\hat{\phi}^i)\cr
+    &amp; = \frac{\phi^{i}}{\sqrt{5}}-\frac{\hat{\phi}^i}{\sqrt{5}}\cr
+    &amp; \because |\hat{\phi}^i|&lt;1 \therefore |\hat{\phi}^i/\sqrt{5}|&lt;0.5\cr
+    \implies &amp; F_{i}=round(\frac{\phi^{i}}{\sqrt{5}})\cr
+\end{aligned}
+$$</p>
+<h2 id="e"><strong>e</strong><a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    F_{2} &amp; =1\geq\phi^{0}=1\cr
+    F_{3} &amp; =2\geq\phi^{1}=\frac{1+\sqrt{5}}{2}\cr
+    F_{i+2} &amp; = F_{i+1}+F_{i}\cr
+    &amp; \geq \phi^{i-1}+\phi^{i-2}\cr
+    &amp; =\phi^{i-2}(\phi+1)\cr
+    &amp; =\phi^{i-2}(\phi^2)\cr
+    &amp; = \phi^{i}\cr
+\end{aligned}
+$$</p>
 
 
 
@@ -1540,7 +1720,7 @@ $$</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (c) 2024 icefox
+      Copyright (c) 2024 icefox-saber
     </div>
   
   

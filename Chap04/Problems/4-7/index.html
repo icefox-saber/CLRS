@@ -1440,15 +1440,15 @@
 
 <h1 id="4-7-monge-arrays">4-7 Monge arrays<a class="headerlink" href="#4-7-monge-arrays" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>An $,\times n$ array $A$ of real numbers is a <strong>Monge array</strong> if for all $i,j,k$, and $l$ such that $1\leq i &lt;k \leq m$ and $i \leq j &lt; l \leq n$, we have</p>
+<p>An $m\times n$ array $A$ of real numbers is a <strong>Monge array</strong> if for all $i,j,k$, and $l$ such that $1\leq i &lt;k \leq m$ and $i \leq j &lt; l \leq n$, we have</p>
 <p>$A[i,j]+A[k,l]\leq A[i,l]+A[k,j]$.</p>
-<p>In other words, whenever we pick two rows and two columns of a Monge array and consider the four elements at the intersections of the rows and the columns, the sum consider the four elements at the intersections of the rows and the columns, the sum lower-left and upper-right elements. For example, the following array is Monge:</p>
+<p>In other words, whenever we pick two rows and two columns of a Monge array and consider the four elements at the intersections of the rows and the columns, the sum of the upper-left and lower-right elements is less than or equal to the sum of the lower-left and upper-right elements. For example, the following array is Monge:</p>
 <p>$$
 \begin{array}{}
     10 &amp; 17 &amp; 13 &amp; 28 &amp; 23\cr
     17 &amp; 22 &amp; 16 &amp; 29 &amp; 23\cr
     24 &amp; 28 &amp; 22 &amp; 34 &amp; 24\cr
-    11 &amp; 13 &amp; 6 &amp; 17 &amp; 7\cr
+    11 &amp; 13 &amp; 6  &amp; 17 &amp; 7\cr
     45 &amp; 44 &amp; 32 &amp; 37 &amp; 23\cr
     36 &amp; 33 &amp; 19 &amp; 21 &amp; 6\cr
     75 &amp; 66 &amp; 51 &amp; 53 &amp; 34\cr
@@ -1532,7 +1532,7 @@ $$</p>
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright (c) 2024 icefox
+      Copyright (c) 2024 icefox-saber
     </div>
   
   
