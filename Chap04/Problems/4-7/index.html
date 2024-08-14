@@ -1364,6 +1364,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4-7 Monge arrays
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1373,6 +1384,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1421,6 +1496,59 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      a
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      b
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      c
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      d
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      e
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1477,6 +1605,57 @@ $$</p>
 <p>Explain how to compute the leftmost minimum in the odd-numbered rows of $A$ (given that the leftmost minimum of the even-numbered rows is known) in $O(m+n) time.</p>
 <p><strong>e</strong>. Write the recurrence for the running time of the algorithm in part (d). Show that its solution is $O(m+n\log m)$.</p>
 </blockquote>
+<h2 id="a"><strong>a</strong><a class="headerlink" href="#a" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    \text{assume }A[i,j]+A[i+k,j+l]\leq A[i,j+l]+A[i+k,j]\cr
+    A[i+k,j]+A[(i+1)+k,j+l] \leq A[i+k,j+l]+A[i+k+1,j]\cr
+    \implies A[i,j]+A[i+k+1,j+l]\leq A[i,j+l]+A[i+k+1,j]\cr
+    A[i,j+l]+A[i+k,j+l+1]\leq A[i,j+l+1]+A[i+k,j+1]\cr
+    \implies A[i,j]+A[i+k,(j+1)+l]\leq A[i,j+l+1]+A[i+k,j]\cr
+\end{aligned}
+$$</p>
+<h2 id="b"><strong>b</strong><a class="headerlink" href="#b" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{array}{}
+37 &amp; 23 &amp; 22 &amp; 32\cr
+21 &amp; 6 &amp; (5) &amp; 10\cr
+53 &amp; 34 &amp; 30 &amp; 31\cr
+32 &amp; 13 &amp; 9 &amp; 6\cr
+43 &amp; 21 &amp; 15 &amp; 8\cr
+\end{array}
+$$</p>
+<h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    i<k\cr
+    \text{since }A[i,f(i)]=\min(A[i,x]),A[k,f(k)]=\min(A[k,x])\cr
+    A[i,f(i)]+A[k,f(k)] \leq A[i,f(k)]+A[k,f(i)]\cr
+    \text{assume }f(i)>f(k)\cr
+    \implies A[i,f(k)]+A[k,f(i)] \leq A[i,f(i)]+A[k,f(k)]\cr
+    \implies A[i,f(k)]+A[k,f(i)] = A[i,f(i)]+A[k,f(k)]\cr
+    A[i,f(i)]\leq A[i,f(k)]\cr
+    A[k,f(k)]\leq A[k,(f(i))]\cr
+    \implies A[i,f(i)] = A[i,f(k)]\cr
+    \implies A[k,f(k)]= A[k,(f(i))]\cr
+    \implies f(i)\leq f(k)\cr
+    \text{Contradictory to assumption}\cr
+    \implies f(i)\leq f(k)\cr
+\end{aligned}
+$$</p>
+<h2 id="d"><strong>d</strong><a class="headerlink" href="#d" title="Permanent link">&para;</a></h2>
+<p>since $f(2k) \leq f(2k+1)\leq f(2k+2)$</p>
+<p>in each odd row, we only need to compare $f(2k+2)-f(2k)+1$ elements. totally need to deal with $O(m)+O(n)=O(m+n)$ over all odd rows.</p>
+<h2 id="e"><strong>e</strong><a class="headerlink" href="#e" title="Permanent link">&para;</a></h2>
+<p>$$
+\begin{aligned}
+    T(m,n) &amp; = T(m/2,n)+O(m+n)\cr
+    T(m,n) &amp; = \sum_{i=0}^{\lg m}O(m/2^i+n)\cr
+    &amp; = O(n\lg m)+\sum_{i=1}^{\lg m}O(m/2^i)\cr
+    &amp; = O(n\lg m)+O(m)\cr
+    &amp; = O(m+n\lg m)\cr
+\end{aligned}
+$$</p>
 
 
 
