@@ -1,10 +1,10 @@
 site_name: CLRS Solutions
-site_description: Solutions to Introduction to Algorithms Third Edition. CLRS Solutions. The textbook that a Computer Science (CS) student must read.
+site_description: Solutions to Introduction to Algorithms Fourth Edition. CLRS Solutions. The textbook that a Computer Science (CS) student must read.
 site_author: Y.-J. Chen
-# site_url: https://CYJ1222.github.io/CLRS/
+site_url: https://icefox-saber.github.io/CLRS/
 
-repo_name: CYJ1222/CLRS
-repo_url: https://github.com/CYJ1222/CLRS
+repo_name: icefox-saber/CLRS
+repo_url: https://github.com/icefox-saber/CLRS
 
 theme:
   name: material
@@ -37,11 +37,11 @@ theme:
         name: Switch to light mode
 
 # Customization
-copyright: Copyright (c) 2024 icefox
+copyright: Copyright (c) 2024 icefox-saber
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/CYJ1222
+      link: https://github.com/icefox-saber
   analytics:
     provider: google
     property: G-NE8FKX91SB
