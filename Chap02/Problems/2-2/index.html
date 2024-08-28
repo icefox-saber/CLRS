@@ -1463,6 +1463,218 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 Probabilistic Analysis and Randomized Algorithms
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            5 Probabilistic Analysis and Randomized Algorithms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/5.1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1 The hiring problem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/5.2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.2 Indicator random variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/5.3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3 Randomized algorithms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/5.4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.4 Probabilistic analysis and further uses of indicator random variables
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_5" id="__nav_2_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Chap 5 Problems
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chap 5 Problems
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/Problems/5-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5-1 Probabilistic counting
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Chap05/Problems/5-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5-2 Searching an unsorted array
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1575,7 +1787,7 @@ In order to show that <strong>BUBBLESORT</strong> actually sorts, what else do y
 <p><strong>loop invariant</strong>: At the start of each iteration of $for$ loop in lines 2-4, $A[j:n]$ consist of the elements originally in $A[j:n]$ before entering the loop but possibly in a different order, and $A[j]$ is the smallest one of them.</p>
 <p><strong>Initialization</strong>: $j=n$, $A[n]$ consist of the elements originally in A$[n]$ and it is the smallest.</p>
 <p><strong>Maintenance</strong>: During the iteration, if$A[j-1]&lt;A[j]$, we swap them. So A[j-1] will be the smallest and A[j-1:n] consist of the elements originally in $A[j-1:n]$. Decresementing j preserves the <strong>loop invariant</strong>.</p>
-<p><strong>Termination</strong>: the loop termination when $j = i$, $A[i:n]$ consist of the elements originally in $A[i:n]$ before entering the loop but possibly in a different order, and $A[i]$ is the smallest one of them.</p>
+<p><strong>Termination</strong>: the loop terminates  when $j = i$, $A[i:n]$ consist of the elements originally in $A[i:n]$ before entering the loop but possibly in a different order, and $A[i]$ is the smallest one of them.</p>
 <h2 id="c"><strong>c</strong><a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p><strong>Loop invariant:</strong> At the start of each iteration of the <strong>for</strong> loop of lines 1-4, the subarray $A[1..i − 1]$ consists of the $i - 1$ smallest elements in $A[1..n]$ in sorted order. $A[i..n]$ consists of the $n - i + 1$ remaining elements in $A[1..n]$.</p>
 <p><strong>Initialization:</strong> Initially the subarray $A[1..i − 1]$ is empty and trivially this is the smallest element of the subarray.</p>
