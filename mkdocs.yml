@@ -118,3 +118,14 @@ nav:
           - Chap 5 Problems:
               - Chap05/Problems/5-1.md
               - Chap05/Problems/5-2.md
+  - II Sorting and Order Statistics:
+      - 6 Heapsort:
+          - Chap06/6.1.md
+          - Chap06/6.2.md
+          - Chap06/6.3.md
+          - Chap06/6.4.md
+          - Chap06/6.5.md
+          - Chap 6 Problems:
+              - Chap06/Problems/6-1.md
+              - Chap06/Problems/6-2.md
+              - Chap06/Problems/6-3.md
