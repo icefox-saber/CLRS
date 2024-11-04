@@ -1,4 +1,3 @@
-
 # Solutions to **Introduction to Algorithms** _Fourth Edition_
 
 ![cover](./assets/cover.png)
