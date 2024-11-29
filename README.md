@@ -2,6 +2,14 @@
 
 ![cover](./docs//assets/cover.png)
 
+## notation
+
+this repository stops updating at 2024/11/29. If you want to take over it, you can create PR.
+
+## cpp implement of the pseudocode of CLRS
+
+**[https://github.com/icefox-saber/CLRS-CPP](https://github.com/icefox-saber/CLRS-CPP)**
+
 ## Getting Started
 
 This **[website](https://icefox-saber.github.io/CLRS/)** contains nearly complete solutions to the bible textbook - [**Introduction to Algorithms** _Fourth Edition_](https://mitpress.mit.edu/books/introduction-algorithms-Fourth-edition), published by [Thomas H. Cormen](https://mitpress.mit.edu/contributors/thomas-h-cormen), [Charles E. Leiserson](https://mitpress.mit.edu/contributors/charles-e-leiserson), [Ronald L. Rivest](https://mitpress.mit.edu/contributors/ronald-l-rivest), and [Clifford Stein](https://mitpress.mit.edu/contributors/clifford-stein).
