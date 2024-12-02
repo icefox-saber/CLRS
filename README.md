@@ -2,7 +2,7 @@
 
 ![cover](./docs//assets/cover.png)
 
-## notation
+## notice
 
 this repository stops updating at 2024/11/29. If you want to take over it, you can create PR.
 
