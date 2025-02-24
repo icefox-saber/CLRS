@@ -2437,7 +2437,8 @@
 <blockquote>
 <p>Show that each child of the root of an $n$-node heap is the root of a subtree containing at most $2n/3$ nodes. What is the smallest constant $\alpha$ such that each subtree has at $\alpha n$ nodes? How does that affect the recurrence (6.1) and its solution?</p>
 </blockquote>
-<p>In extreme case, $n = 2^{h} - 1 + 2^{h-1} - 1 + 1$. The left subtree has $2^{h}-1$ nodes and the right subtree has $2^{h-1} -1$ nodes. a subtree containing at most $\frac{2^{h}-1}{2^{h}-1 + 2^{h-1} -1 + 1} \cdot n = \frac{2 * 2^{h-1}-1}{3 * 2^{h-1}-1}\cdot n \leq \frac{2n}{3}$ nodes.</p>
+<p>Let $\alpha n$ be the subtree's nodes number, if we want $\alpha$ to be maximum or mimimum, we need the tree to be most unbalanced. In this case, the left subtree is just full, the next node is to filled in right subtree. Let h be the height of the left subtree, it has $2^{h} - 1$ nodes, and the right has $2^{h-1} - 1$.</p>
+<p>In this case, $n = 2^{h} - 1 + 2^{h-1} - 1 + 1$. The left subtree has $2^{h}-1$ nodes and the right subtree has $2^{h-1} -1$ nodes. a subtree containing at most $\frac{2^{h}-1}{2^{h}-1 + 2^{h-1} -1 + 1} \cdot n = \frac{2 * 2^{h-1}-1}{3 * 2^{h-1}-1}\cdot n \leq \frac{2n}{3}$ nodes. The right has at least $\frac{2^{h-1}-1}{2^{h}-1 + 2^{h-1} -1 + 1} \cdot n = \frac{ 2^{h-1}-1}{3 * 2^{h-1}-1}\cdot n = \frac{1}{3}(\frac{ 3*2^{h-1}-3}{3 * 2^{h-1}-1}\cdot n) = \frac{n}{3}(1 - \frac{2}{3 * 2^{h-1}-1}) = 0$ nodes, in which case the whole tree has 2 nodes. The left has at least $\frac{1}{3}$, in which case the whole tree has 3 nodes. The case $n = 1$ is omitted.</p>
 <h2 id="62-3">6.2-3<a class="headerlink" href="#62-3" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Starting with the procedure <strong>MAX-HEAPIFY</strong>, write pseudocode for the procedure <strong>MIN-HEAPIFY(A,i)</strong>, which performs the corresponding manipulation on a minheap. How does the running time of <strong>MIN-HEAPIFY</strong> compare with that of <strong>MIN-HEAPIFY</strong>?</p>
@@ -2464,7 +2465,9 @@
 <blockquote>
 <p>What is the effect of calling <strong>MAX-HEAPIFY(A,i)</strong> for $i &gt; A$.<em>heap-size</em>$/2$?</p>
 </blockquote>
-<p>No effect. $l$ and $r$ is found to be larger than $A$.<em>heap-size</em>, and $largest = i$, then the procedure return.</p>
+<p>No effect.</p>
+<p>For program. Let $l$ be the left child of $i$ , and $r$ be the right. $l$ and $r$ is found to be larger than $A$.<em>heap-size</em>, then the procedure return.</p>
+<p>For theory, i is a left since $i &gt; A$.</p>
 <h2 id="62-6">6.2-6<a class="headerlink" href="#62-6" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>The code for <strong>MAX-HEAPIFY</strong> is quite efficient in terms of constant factors, except possibly for the recursive call in line 10, for which some compilers might produce inefficient code. Write an efficient MAX-HEAPIFY that uses an iterative control construct (a loop) instead of recursion.</p>

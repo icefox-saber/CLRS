@@ -2352,7 +2352,18 @@ $$</p>
 <blockquote>
 <p>When <strong>RANDOMIZED-QUICKSORT</strong> runs, how many calls are made to the random-number generator <strong>RANDOM</strong> in the worst case? How about in the best case? Give your answer in terms of $\Theta$-notation.</p>
 </blockquote>
-<p>Since each element will be selected as pivot.The number of calls to <strong>RANDOM</strong> is: $\Theta(n)$.</p>
+<p>In worst case, <strong>RANDOM</strong> will always select the minimum or maximum number, each element will be selected as pivot. The number of calls to <strong>RANDOM</strong> is: $\Theta(n)$.</p>
+<p>In best cast, let $F(n)$ be the calls made to <strong>RAMDOM</strong>, $G(n) = \min(F(n))$</p>
+<p>$$
+\begin{align}
+    F(1) = 0\cr
+    F(2) = 1\cr
+    G(3) = 1\cr
+    G(n) = \min(G(k)+G(n-k-1)+1)\cr
+    G(n) = 2G((n-1)/2) +1(\text{I guess})\cr
+    G(n) = O(n)\cr
+\end{align}
+$$</p>
 
 
 
