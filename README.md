@@ -30,7 +30,7 @@ I use the static site generator [MkDocs](http://www.mkdocs.org/) and the beautif
 
 As for rendering math equations, I use [KaTeX](https://katex.org/), which is fast and beautiful.
 
-## Refference
+## Reference
 
 - [**Introduction to Algorithms Solution** _Third Edition_]( https://github.com/walkccc/CLRS "The best solution for CLRS 3rd").
 
